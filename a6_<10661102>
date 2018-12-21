@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int list[5];
+    int numbers;
+            cout<<"Enter total number"<<endl;
+            cin>>list[5];
+            cout<<"Enter "<<list[5]<<" number"<<endl;
+
+            for(int i=0; i<list[5]; i++)
+            {
+                cin>>list[i];
+            }
+            cout<<"Enter the number to find\n";
+            cin>>numbers;
+
+
+    int first = 0;
+    int last = 5 - 1;
+    int middle;
+    bool found = false;
+
+
+        while (first <= last && !found)
+    {
+
+       middle = (first + last) / 2;
+          if (list[middle] == numbers)
+          {
+            found = true;
+          }
+
+          else if (list[middle] > numbers)
+          {
+            last = middle - 1;
+          }
+          else
+          {
+            first = middle + 1;
+          }
+    }
+        if (found)
+    {
+            cout<<numbers<<" found at position "<<middle+1;
+    }
+        else
+        {
+            cout<<"Invalid! "<<numbers<<" not found";
+        }
+
+
+    return -1;
+}
+
